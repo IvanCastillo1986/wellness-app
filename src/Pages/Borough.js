@@ -3,12 +3,12 @@ import BoroughInput from '../Components/BoroughInput'
 
 
 
-export default function Borough() {
+export default function Borough({ emotion, handleEmotionChange, parks, setParks }) {
     
 
     return (
         <div>
-            <BoroughInput />
+            <BoroughInput emotion={emotion} handleEmotionChange={handleEmotionChange} parks={parks} setParks={setParks} />
         </div>
     )
 }
