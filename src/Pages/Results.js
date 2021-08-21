@@ -1,13 +1,15 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import ParksList from '../Components/ParksList'
 
 
 
-export default function Results() {
+export default function Results({ parks }) {
+
 
 
     return (
         <div>
-            Results
+            <ParksList parks={parks} />
         </div>
     )
 }
