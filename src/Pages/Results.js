@@ -1,17 +1,15 @@
 import React, { useState, useEffect } from 'react'
-import { apiURL } from '../util/apiURL.js'
+import ParksList from '../Components/ParksList'
 
 
 
-export default function Results() {
-
-    const [parks, setParks] = useState([])
+export default function Results({ parks }) {
 
 
 
     return (
         <div>
-            Results
+            <ParksList parks={parks} />
         </div>
     )
 }
