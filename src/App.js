@@ -1,6 +1,7 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 
+
 import Navbar from './Components/Navbar'
 import Home from './Pages/Home'
 import Results from './Pages/Results'
@@ -23,8 +24,6 @@ export default function App() {
           <Route path='/borough' component={Borough} />
         </main>
       </Switch>
-
-      
     </div>
   )
 }
