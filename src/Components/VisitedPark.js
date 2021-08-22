@@ -6,9 +6,11 @@ import React from 'react'
 
 
 export default function VisitedPark({ park }) {
+
+	
 	return (
 		<div>
-			<p>We hope you've enjoyed visiting {park.name} Park!</p>
+			<h1>We hope you've enjoyed visiting {park.name}!</h1>
 		</div>
 	);
 }

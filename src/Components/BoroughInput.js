@@ -3,7 +3,6 @@ import { useHistory } from 'react-router-dom';
 import { apiURL } from '../util/apiURL.js';
 import makePark from '../util/makePark.js';
 import axios from 'axios';
-import './BoroughInput.css'
 
 
 
@@ -60,6 +59,7 @@ export default function BoroughInput({ handleEmotionChange, setParks }) {
 					<option value='calm'>Hyper</option>
 				</select>
 				<br />
+				<p>We will use your current mood to match you with the right park!</p>
 				<input type='submit' value="Find Park" />
 			</form>
 		</div>

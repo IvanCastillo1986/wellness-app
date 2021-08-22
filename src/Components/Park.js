@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom'
 
 export default function Park({ park, index, emotion }) {
 	return (
-		<div>
-			<CardGroup className='Park'>
-				<Card className='m-5' style={{ width: '18rem' }}>
+		<div className='Park'>
+			<CardGroup>
+				<Card className='m-5' style={{ width: '18rem', textAlign: 'center' }}>
 					<Card.Title className='Park'>
 						<Link to={`/results/${index}`}>
 							<h2>{park.name}</h2>
@@ -21,7 +21,6 @@ export default function Park({ park, index, emotion }) {
 					<Card.Text>
 						{emotion}: {park.emotions[`${emotion}`].value}
 					</Card.Text>
-					<Button variant='success'>Get Directions</Button>
 				</Card>
 			</CardGroup>
 		</div>
