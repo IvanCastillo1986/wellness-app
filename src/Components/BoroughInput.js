@@ -38,7 +38,7 @@ export default function BoroughInput({ handleEmotionChange, setParks }) {
 	};
 
 	return (
-		<div className="BoroughInput">
+		<div className='BoroughInput'>
 			<form onSubmit={handleSubmit}>
 				<label htmlFor='borough-select'>Choose a Borough:</label>
 				<select id='borough-select' onChange={handleChange}>
@@ -60,7 +60,7 @@ export default function BoroughInput({ handleEmotionChange, setParks }) {
 					<option value='calm'>Hyper</option>
 				</select>
 				<br />
-				<input type='submit' value="Let's Go!" />
+				<input type='submit' value="Find Park" />
 			</form>
 		</div>
 	);

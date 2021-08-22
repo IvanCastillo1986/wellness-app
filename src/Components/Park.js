@@ -1,6 +1,8 @@
+import React from 'react';
 import { Button, Card, CardGroup } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import './Park.css';
+import { Link } from 'react-router-dom'
+
+
 
 export default function Park({ park, index, emotion }) {
 	return (
@@ -13,7 +15,7 @@ export default function Park({ park, index, emotion }) {
 						</Link>
 					</Card.Title>
 					Location:
-					<Card.Text>
+					<Card.Text className='Park'>
 						<p>{park.address}</p>
 					</Card.Text>
 					<Card.Text>
