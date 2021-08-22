@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { Card, CardGroup} from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import './Park.css'
+import React from 'react';
+import { Link } from 'react-router-dom'
+
+
 
 export default function Park({ park, index, emotion }) {
 

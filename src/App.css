@@ -1,0 +1,11 @@
+button {
+    background-color: green;
+    width: 100px;
+}
+
+.App input[type=submit] {
+    background-color: lightgreen;
+    border: 3px solid rgb(0, 96, 0);
+    border-radius: 5px;
+    padding: 7px 12px;
+}
