@@ -1,5 +1,5 @@
 const apiURL = () => {
-    return `https://data.cityofnewyork.us/resource/enfh-gkve.json`
-}
+	return `https://data.cityofnewyork.us/resource/enfh-gkve.json`;
+};
 
-module.exports =  { apiURL }
+module.exports = { apiURL };

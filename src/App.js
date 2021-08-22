@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import { Switch, Route } from 'react-router-dom'
+import './App.css'
 
-import Navbar from './Components/Navbar'
+
+import Navi from './Components/Navi'
 import Home from './Pages/Home'
 import Results from './Pages/Results'
 import Feedback from './Pages/Feedback'
@@ -22,8 +24,8 @@ export default function App() {
   const [parks, setParks] = useState([])
 
   return (
-    <div>
-      <Navbar />
+    <div className="App">
+      <Navi />
       <main>
         <Switch>
             <Route exact path='/' component={Home} />
