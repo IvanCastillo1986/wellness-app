@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { apiURL } from '../util/apiURL.js'
+import makePark from '../util/makePark.js'
 import axios from 'axios'
 
 
 
-export default function BoroughInput({ emotion, handleEmotionChange, setParks }) {
+export default function BoroughInput({ handleEmotionChange, setParks }) {
 
     const [borough, setBorough] = useState('R')
     const API = apiURL()
@@ -14,15 +15,21 @@ export default function BoroughInput({ emotion, handleEmotionChange, setParks })
     const handleChange = (e) => {
         setBorough(e.target.value)
     }
-    const getParks = () => {
-        axios.get(`${API}?borough=${borough}&$limit=5`)
-        .then(
-            (res) => setParks(res.data),
-            (err) => console.log(`get `, err)
-        ).then(res => history.push('/results'))
+
+    const getParks = async () => {
+        const newParks = []
+        await axios.get(`${API}?borough=${borough}&$limit=5`)
+        .then((res) => {
+            console.log(res.data)
+            res.data.forEach((park) => {
+                newParks.push(makePark(park))
+            })
+        }).then(res => history.push('/results'))
         .catch((c) => console.warn(`catch `, c))
         console.log('Using getParks')
+        setParks(newParks)
     }
+    
     const handleSubmit = (e) => {
         e.preventDefault()
         getParks()
