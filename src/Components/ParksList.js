@@ -1,13 +1,12 @@
-import React from 'react'
+import React from 'react';
+import Park from './Park';
 
-
-
-export default function ParksList({ parks }) {
-
-    
-    return (
-        <div>
-            
-        </div>
-    )
+export default function ParksList({ parks, emotion }) {
+	return (
+		<div>
+			{parks.map((park, i) => {
+				return <Park key={i} park={park} />;
+			})}
+		</div>
+	);
 }
