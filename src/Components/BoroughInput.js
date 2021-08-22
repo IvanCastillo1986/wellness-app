@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { apiURL } from '../util/apiURL.js';
 import makePark from '../util/makePark.js';
 import axios from 'axios';
+import './BoroughInput.css'
 
 export default function BoroughInput({ handleEmotionChange, setParks }) {
 	const [borough, setBorough] = useState('R');
@@ -35,7 +36,7 @@ export default function BoroughInput({ handleEmotionChange, setParks }) {
 	};
 
 	return (
-		<div>
+		<div className="BoroughInput">
 			<form onSubmit={handleSubmit}>
 				<label htmlFor='borough-select'>Choose a Borough:</label>
 				<select id='borough-select' onChange={handleChange}>
