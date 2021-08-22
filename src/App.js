@@ -20,6 +20,11 @@ export default function App() {
     setEmotion(e.target.value)
   }
 
+  const [emotionReview, setEmotionReview] = useState(5)
+  const handleEmotionReview = (e) => {
+    setEmotionReview(e.target.value)
+  }
+
   // Parks will be defined here because it needs to be shared with Borough and Results
   const [parks, setParks] = useState([])
 
@@ -32,11 +37,11 @@ export default function App() {
             <Route path='/borough'>
               <Borough emotion={emotion} handleEmotionChange={handleEmotionChange} parks={parks} setParks={setParks} />
             </Route>
-            <Route>
+            <Route exact path='/results'>
               <Results emotion={emotion} parks={parks} />
             </Route>
-            <Route>
-              <Feedback />
+            <Route path='/results/:index'>
+              <Feedback parks={parks} emotion={emotion} emotionReview={emotionReview} handleEmotionReview={handleEmotionReview} />
             </Route>
         </Switch>
       </main>
