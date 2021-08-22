@@ -32,11 +32,11 @@ export default function App() {
             <Route path='/borough'>
               <Borough emotion={emotion} handleEmotionChange={handleEmotionChange} parks={parks} setParks={setParks} />
             </Route>
-            <Route>
+            <Route path='/results'>
               <Results emotion={emotion} parks={parks} />
             </Route>
-            <Route>
-              <Feedback />
+            <Route path='/feedback/:index'>
+              <Feedback parks={parks} />
             </Route>
         </Switch>
       </main>
