@@ -6,8 +6,8 @@ export default function Home() {
 	return (
 		<div className="Home">
 			<img src={Image} alt="" className="imgstyle"/>
-			<div className="centered"><h1>Welcome To Urban Nature Time!</h1>
-			<p>This is where the welcome messgae goes</p></div>
+			<div className="centered"><h1>Welcome To Park Place!</h1>
+			<p>Tying mental health with physical surroundings</p></div>
 		</div>
 	);
 }

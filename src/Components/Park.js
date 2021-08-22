@@ -4,17 +4,23 @@ import { Link } from 'react-router-dom'
 
 
 export default function Park({ park, index, emotion }) {
-	console.log('Console.log: ', park);
 
-
-    
 	return (
-        <Link to={`/results/${index}`}>
-            <div>
-                <h1>{park.name}</h1>
-                <h3>Located at {park.address}</h3>
-                <h4>{emotion}: {park.emotions[`${emotion}`].value}</h4>
-            </div>
-        </Link>
+		<Link to={`/results/${index}`}>
+			<CardGroup className="Park">
+				<Card className='m-5' style={{ width: '18rem' }}>
+					<Card.Title className='Park'>
+						<h2>{park.name}</h2>
+					</Card.Title>
+					Location:
+					<Card.Text>
+						<p>{park.address}</p>
+					</Card.Text>
+					<Card.Text>
+						{emotion}: {park.emotions[`${emotion}`].value}
+					</Card.Text>
+				</Card>
+			</CardGroup>
+		</Link>
 	);
 }

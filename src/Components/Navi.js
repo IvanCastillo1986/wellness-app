@@ -9,7 +9,7 @@ export default function Navi() {
 			<Container>
 				<Navbar.Brand as={Link} to='/'>
 					<img src={Image} alt="" height="40" width="40" />
-					Urban Nature Time</Navbar.Brand>
+					Park Place</Navbar.Brand>
 				<Navbar.Toggle aria-controls='basic-navbar-nav' />
 				<Navbar.Collapse id='basic-navbar-nav'>
 					<Nav className='ml-auto'>
