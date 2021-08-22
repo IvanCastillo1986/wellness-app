@@ -4,6 +4,8 @@ import { apiURL } from '../util/apiURL.js';
 import makePark from '../util/makePark.js';
 import axios from 'axios';
 
+
+
 export default function BoroughInput({ handleEmotionChange, setParks }) {
 	const [borough, setBorough] = useState('R');
 	const API = apiURL();
@@ -46,10 +48,10 @@ export default function BoroughInput({ handleEmotionChange, setParks }) {
 					<option value='Q'>Queens</option>
 				</select>
 				<br />
-				<label htmlFor=''>How are you currently feeling?</label>
+				<label htmlFor='emotion'>How are you currently feeling?</label>
 				<select id='emotion' onChange={handleEmotionChange}>
 					<option value='happy'>Sad</option>
-					<option value='satisfied'>Bored</option>
+					<option value='entertained'>Bored</option>
 					<option value='content'>Frustrated</option>
 					<option value='relaxed'>Tense</option>
 					<option value='at_ease'>Annoyed</option>
