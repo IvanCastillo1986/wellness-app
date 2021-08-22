@@ -6,15 +6,15 @@ const makePark = (park) => {
 	const newPark = {
 		name: park.name311,
 		address: park.location,
-		emotion: {
-			uplifted: randomNum(), // depressed
-			satisified: randomNum(), // bored
-			content: randomNum(), // frustrated
-			relaxed: randomNum(), // tense
-			happy: randomNum(), // sad
-			at_ease: randomNum(), // annoyed
-			calm: randomNum(), //hyper
-		},
+		emotions: {
+			uplifted: {value: randomNum(), count: 1}, // depressed
+			entertained: {value: randomNum(), count: 1}, // bored
+			content: {value: randomNum(), count: 1}, // frustrated
+			relaxed: {value: randomNum(), count: 1}, // tense
+			happy: {value: randomNum(), count: 1}, // sad
+			at_ease: {value: randomNum(), count: 1}, // annoyed
+			calm: {value: randomNum(), count: 1} //hyper
+		}
 	};
 	return newPark;
 };
