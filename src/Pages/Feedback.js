@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom'
 import VisitedPark from '../Components/VisitedPark'
 import Review from '../Components/Review'
+import './Feedback.css'
 
 
 
@@ -26,7 +27,7 @@ export default function Feedback({ parks, emotion, handleEmotionReview, emotionR
     }
 
 	return (
-		<div>
+		<div className='Feedback'>
 			<VisitedPark park={park} />
 			<Review emotion={emotion} handleEmotionReview={handleEmotionReview} handleEmotionSubmit={handleEmotionSubmit} park={park} />
 		</div>

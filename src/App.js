@@ -8,6 +8,7 @@ import Home from './Pages/Home'
 import Results from './Pages/Results'
 import Feedback from './Pages/Feedback'
 import Borough from './Pages/Borough'
+import GoodRating from './Components/GoodRating'
 
 
 
@@ -43,6 +44,7 @@ export default function App() {
             <Route path='/results/:index'>
               <Feedback parks={parks} emotion={emotion} emotionReview={emotionReview} handleEmotionReview={handleEmotionReview} />
             </Route>
+            <Route path='/volunteer' component={GoodRating}/>
         </Switch>
       </main>
     </div>
