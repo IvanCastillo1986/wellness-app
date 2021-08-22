@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
-import { useParams } from 'react-router-dom'
+import React from 'react'
+
 
 // This page will crash if it is refreshed!
 // Because it no longer has user input from the borough component, so the parks array is empty
+
 
 export default function VisitedPark({ park }) {
 

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 export default function Navi() {
 	return (
-		<Navbar as='div' expand='md'>
+		<Navbar as='div' expand='md' style={{borderBottom: '2px solid green'}}>
 			<Container>
 				<Navbar.Brand as={Link} to='/'>
 					<img src={Image} alt="" height="40" width="40" />

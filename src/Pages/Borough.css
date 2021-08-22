@@ -1,0 +1,15 @@
+.Borough h1 {
+    text-align: center;
+    margin: 100px;
+}
+
+.BoroughInput form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.BoroughInput select {
+    width: 130px;
+}
+
