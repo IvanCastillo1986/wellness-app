@@ -6,7 +6,7 @@ import axios from 'axios';
 
 
 
-export default function BoroughInput({ handleEmotionChange, setParks }) {
+export default function BoroughInput({ handleEmotionChange, handleSetParks }) {
 	const [borough, setBorough] = useState('R');
 	const API = apiURL();
 	const history = useHistory();
@@ -20,7 +20,6 @@ export default function BoroughInput({ handleEmotionChange, setParks }) {
 		await axios
 			.get(`${API}?borough=${borough}&$limit=5`)
 			.then((res) => {
-				console.log(res.data);
 				res.data.forEach((park) => {
 					newParks.push(makePark(park));
 				});
@@ -28,7 +27,7 @@ export default function BoroughInput({ handleEmotionChange, setParks }) {
 			.then((res) => history.push('/results'))
 			.catch((c) => console.warn(`catch `, c));
 		console.log('Using getParks');
-		setParks(newParks);
+		handleSetParks(newParks);
 	};
 
 	const handleSubmit = (e) => {

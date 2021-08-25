@@ -1,10 +1,18 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 
 
-export default function Review({ emotion, handleEmotionReview, handleEmotionSubmit }) {
+export default function Review({ currentPark, emotion, handleEmotionReview, handleSetCurrentParkEmotion }) {
 
+	const history = useHistory()
+	console.log(currentPark)
+
+	const handleEmotionSubmit = (e) => {
+        e.preventDefault()
+        handleSetCurrentParkEmotion(currentPark)
+		history.push('/volunteer')
+    }
 
 	return (
 		<div className='Review'>
@@ -20,7 +28,7 @@ export default function Review({ emotion, handleEmotionReview, handleEmotionSubm
 					<div className='Rating'><span className='Bad'>No Likey</span> <span className='Good'>Great Park!</span></div>
 				</div>
 				<br />
-				<Link to='/volunteer'><input type='submit' value='Submit rating!' /></Link>
+				<input type='submit' value='Submit rating!' />
 			</form>
 		</div>
 	);
