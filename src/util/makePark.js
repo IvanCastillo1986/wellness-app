@@ -3,17 +3,22 @@ const randomNum = () => {
 };
 
 const makePark = (park) => {
+	const arr = []
+	for (let i = 0; i <= 6; i++) {
+		arr.push(randomNum())
+	}
+	
 	const newPark = {
 		name: park.name311,
 		address: park.location,
 		emotions: {
-			uplifted: {value: randomNum(), count: 1}, // depressed
-			entertained: {value: randomNum(), count: 1}, // bored
-			content: {value: randomNum(), count: 1}, // frustrated
-			relaxed: {value: randomNum(), count: 1}, // tense
-			happy: {value: randomNum(), count: 1}, // sad
-			at_ease: {value: randomNum(), count: 1}, // annoyed
-			calm: {value: randomNum(), count: 1} //hyper
+			uplifted: {avgRating: arr[0], numOfUsersRated: 1, total: arr[0]}, // depressed
+			entertained: {avgRating: arr[1], numOfUsersRated: 1, total: arr[1]}, // bored
+			content: {avgRating: arr[2], numOfUsersRated: 1, total: arr[2]}, // frustrated
+			relaxed: {avgRating: arr[3], numOfUsersRated: 1, total: arr[3]}, // tense
+			happy: {avgRating: arr[4], numOfUsersRated: 1, total: arr[4]}, // sad
+			at_ease: {avgRating: arr[5], numOfUsersRated: 1, total: arr[5]}, // annoyed
+			calm: {avgRating: arr[6], numOfUsersRated: 1, total: arr[6]} //hyper
 		}
 	};
 	return newPark;

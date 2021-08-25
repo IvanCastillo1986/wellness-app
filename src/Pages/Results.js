@@ -3,7 +3,7 @@ import ParksList from '../Components/ParksList';
 import './Feedback.css'
 
 
-// all this component does is display the parks, no changes
+// all this component does is display the parks and take you to Feedback, no changes
 
 export default function Results({ parks, emotion, handleSetCurrentPark }) {
 	

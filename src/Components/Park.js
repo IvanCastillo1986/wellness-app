@@ -21,7 +21,7 @@ export default function Park({ park, index, emotion, handleSetCurrentPark }) {
 						{park.address}
 					</Card.Text>
 					<Card.Text>
-						{emotion}: {park.emotions[emotion].value}
+						{emotion}: {park.emotions[emotion].avgRating}
 					</Card.Text>
 				</Card>
 		</div>
