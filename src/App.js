@@ -15,7 +15,7 @@ import GoodRating from './Components/GoodRating'
 export default function App() {
 
 
-  // Emotion will be defined here because the state needs to be shared with Borough and Results
+  // Emotion will be defined here because the state needs to be shared with Borough, Results, Feedback
   const [emotion, setEmotion] = useState('happy')
   const handleEmotionChange = (e) => {
     setEmotion(e.target.value)
@@ -28,6 +28,22 @@ export default function App() {
 
   // Parks will be defined here because it needs to be shared with Borough and Results
   const [parks, setParks] = useState([])
+  const handleSetParks = (parksArr) => {
+    setParks(parksArr)
+  }
+
+  const [currentPark, setCurrentPark] = useState({})
+  const handleSetCurrentPark = (park) => {
+    setCurrentPark(park)
+  }
+  const handleSetCurrentParkEmotion = (park) => {
+		const newCount = park.emotions[emotion].count + 1
+		const average = (park.emotions[emotion].value + emotionReview) / newCount
+		setCurrentPark(prevPark => ({
+			...prevPark,
+			emotions: { ...prevPark.emotions, [emotion]: { ...prevPark.emotions[emotion], value: average, count: newCount } }
+		}))
+	}
 
   return (
     <div className="App">
@@ -36,15 +52,17 @@ export default function App() {
         <Switch>
             <Route exact path='/' component={Home} />
             <Route path='/borough'>
-              <Borough emotion={emotion} handleEmotionChange={handleEmotionChange} parks={parks} setParks={setParks} />
+              <Borough emotion={emotion} handleEmotionChange={handleEmotionChange} handleSetParks={handleSetParks} />
             </Route>
             <Route exact path='/results'>
-              <Results emotion={emotion} parks={parks} />
+              <Results emotion={emotion} parks={parks} handleSetCurrentPark={handleSetCurrentPark} />
             </Route>
             <Route path='/results/:index'>
-              <Feedback parks={parks} emotion={emotion} emotionReview={emotionReview} handleEmotionReview={handleEmotionReview} />
+              <Feedback currentPark={currentPark} handleSetCurrentParkEmotion={handleSetCurrentParkEmotion} emotion={emotion} emotionReview={emotionReview} handleEmotionReview={handleEmotionReview} />
             </Route>
-            <Route path='/volunteer' component={GoodRating}/>
+            <Route path='/volunteer'>
+              <GoodRating currentPark={currentPark} emotion={emotion} />
+            </Route>
         </Switch>
       </main>
     </div>
