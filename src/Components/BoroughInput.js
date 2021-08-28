@@ -26,7 +26,6 @@ export default function BoroughInput({ handleEmotionChange, handleSetParks }) {
 			})
 			.then((res) => history.push('/results'))
 			.catch((c) => console.warn(`catch `, c));
-		console.log('Using getParks');
 		handleSetParks(newParks);
 	};
 

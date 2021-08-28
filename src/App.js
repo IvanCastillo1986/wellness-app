@@ -23,7 +23,7 @@ export default function App() {
 
   const [emotionReview, setEmotionReview] = useState(5)
   const handleEmotionReview = (e) => {
-    setEmotionReview(e.target.value)
+    setEmotionReview(Number(e.target.value))
   }
 
   // Parks will be defined here because it needs to be shared with Borough and Results
@@ -37,12 +37,19 @@ export default function App() {
     setCurrentPark(park)
   }
   const handleSetCurrentParkEmotion = (park) => {
-		const newCount = park.emotions[emotion].count + 1
-		const average = (park.emotions[emotion].value + emotionReview) / newCount
-		setCurrentPark(prevPark => ({
-			...prevPark,
-			emotions: { ...prevPark.emotions, [emotion]: { ...prevPark.emotions[emotion], value: average, count: newCount } }
-		}))
+    const userCount = park.emotions[emotion].numOfUsersRated + 1
+
+    setCurrentPark(prevPark => {
+			return {...prevPark,
+        emotions: { ...prevPark.emotions, 
+          [emotion]: { ...prevPark.emotions[emotion],
+            avgRating: (prevPark.emotions[emotion].total + emotionReview) / userCount, 
+            numOfUsersRated: userCount,
+            total: prevPark.emotions[emotion].total + emotionReview
+          }
+        }
+      }
+    })
 	}
 
   return (

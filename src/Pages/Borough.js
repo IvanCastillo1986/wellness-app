@@ -11,7 +11,6 @@ export default function Borough({ emotion, handleEmotionChange, handleSetParks }
 			<BoroughInput
 				emotion={emotion}
 				handleEmotionChange={handleEmotionChange}
-				// parks={parks}
 				handleSetParks={handleSetParks}
 			/>
 		</div>

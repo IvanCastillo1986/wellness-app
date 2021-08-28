@@ -11,7 +11,7 @@ export default function Review({ currentPark, emotion, handleEmotionReview, hand
 	const handleEmotionSubmit = (e) => {
         e.preventDefault()
         handleSetCurrentParkEmotion(currentPark)
-		history.push('/volunteer')
+		// history.push('/volunteer')
     }
 
 	return (
